@@ -5,4 +5,10 @@ Rails.application.routes.draw do
 
     root to: "equipment#index" # <--- Root route
   end
+
+  scope module: "api" do
+    namespace :v1, path: "" do
+      resources :assessments, only: :create
+    end
+  end
 end

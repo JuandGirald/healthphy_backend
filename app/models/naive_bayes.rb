@@ -3,21 +3,22 @@ class NaiveBayes
 
   attr_reader :data_set, :training_data
 
-  DATA_SET_FILE = 'bayes_data_set.csv'
+  DATA_SET_FILE = 'back.csv'
 
   # entry: array of hashes with questions answer
   #{"1"=>"a", "2"=>"b", "3"=>"c", "4"=>"a"}
   #
   #classes: class names to classify
-  def initialize(entry:)
-    @entry = entry
+  def initialize(entries:, body_part:)
+    @entries = entries
+    @body_part = body_part
     @data_set = get_data_set
     @training_data = []
     @classes = data_set.headers[2, data_set.headers.length]
   end
 
   def training
-    @entry.each do |key, value|
+    @entries.each do |key, value|
       training_data << data_set.select do |data| 
         data['question'].to_s == key.to_s && data['option'] == value
       end[0]

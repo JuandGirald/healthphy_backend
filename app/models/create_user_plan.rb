@@ -13,18 +13,19 @@ class CreateUserPlan
   end
 
   def call
-    process = NaiveBayes.new(
-      entries: @data_entries,
-      body_part: @body_part
-    )
+    # commented for now while adding more plans
+    
+    # process = NaiveBayes.new(
+    #   entries: @data_entries,
+    #   body_part: @body_part
+    # )
 
     # train the data set
-    process.training
+    # process.training
 
     # classify the data
-    personalized_plan = process.classify
+    # personalized_plan = process.classify
 
-    # commented for now while adding more plans
     # return { personalized_plan: personalized_plan } if personalized_plan == 'no'
 
     perzonalized_plans_data

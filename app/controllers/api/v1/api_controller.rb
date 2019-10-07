@@ -3,7 +3,7 @@ module Api
     class APIController < ApplicationController
       # include Api::ErrorHandler
 
-      respond_to :json
+      # respond_to :json
     end
   end
 end
